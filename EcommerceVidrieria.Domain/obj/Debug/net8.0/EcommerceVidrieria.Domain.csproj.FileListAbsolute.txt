@@ -1,0 +1,12 @@
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Domain\bin\Debug\net8.0\EcommerceVidrieria.Domain.deps.json
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Domain\bin\Debug\net8.0\EcommerceVidrieria.Domain.dll
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Domain\bin\Debug\net8.0\EcommerceVidrieria.Domain.pdb
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Domain\obj\Debug\net8.0\EcommerceVidrieria.Domain.csproj.AssemblyReference.cache
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Domain\obj\Debug\net8.0\EcommerceVidrieria.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Domain\obj\Debug\net8.0\EcommerceVidrieria.Domain.AssemblyInfoInputs.cache
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Domain\obj\Debug\net8.0\EcommerceVidrieria.Domain.AssemblyInfo.cs
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Domain\obj\Debug\net8.0\EcommerceVidrieria.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Domain\obj\Debug\net8.0\EcommerceVidrieria.Domain.dll
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Domain\obj\Debug\net8.0\refint\EcommerceVidrieria.Domain.dll
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Domain\obj\Debug\net8.0\EcommerceVidrieria.Domain.pdb
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Domain\obj\Debug\net8.0\ref\EcommerceVidrieria.Domain.dll
