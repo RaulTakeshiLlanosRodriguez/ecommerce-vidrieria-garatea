@@ -33,7 +33,6 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Queries.GetUserByI
                 Id = user.Id,
                 UserName = user.UserName,
                 Lastname = user.LastName,
-                Phone = user.PhoneNumber,
                 Email = user.Email,
                 Roles = await _userManager.GetRolesAsync(user)
             };

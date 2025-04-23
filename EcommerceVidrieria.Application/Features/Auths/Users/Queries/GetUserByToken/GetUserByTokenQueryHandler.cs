@@ -46,7 +46,6 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Queries.GetUserByT
                 Id = user.Id,
                 UserName = user.UserName,
                 Lastname = user.LastName,
-                Phone = user.PhoneNumber,
                 Email = user.Email,
                 Roles = roles,
                 Token = _authService.CreateToken(user, roles)

@@ -35,7 +35,6 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Commands.UpdatePro
 
             updateUser.UserName = request.Username;
             updateUser.LastName = request.Lastname;
-            updateUser.PhoneNumber = request.Phone;
             updateUser.Email = request.Email;
 
             var result = await _userManager.UpdateAsync(updateUser);
@@ -53,7 +52,6 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Commands.UpdatePro
                 Id = userById!.Id,
                 UserName = userById.UserName,
                 Lastname = userById.LastName,
-                Phone = userById.PhoneNumber,
                 Email = userById.Email,
                 Token = _authService.CreateToken(userById, roles),
                 Roles = roles

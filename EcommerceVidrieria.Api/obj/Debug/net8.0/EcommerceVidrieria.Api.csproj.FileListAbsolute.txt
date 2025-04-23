@@ -150,6 +150,7 @@ C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Api\obj\
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Api\obj\Debug\net8.0\EcommerceVidrieria.Api.csproj.CoreCompileInputs.cache
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Api\obj\Debug\net8.0\EcommerceVidrieria.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Api\obj\Debug\net8.0\EcommerceVidrieria.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Api\obj\Debug\net8.0\EcommerceVidrieria.Api.sourcelink.json
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Api\obj\Debug\net8.0\staticwebassets\msbuild.EcommerceVidrieria.Api.Microsoft.AspNetCore.StaticWebAssets.props

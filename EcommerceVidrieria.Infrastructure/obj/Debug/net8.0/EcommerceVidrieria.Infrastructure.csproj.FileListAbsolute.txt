@@ -11,6 +11,7 @@ C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Infrastr
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Infrastructure\obj\Debug\net8.0\EcommerceVidrieria.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Infrastructure\obj\Debug\net8.0\EcommerceVidrieria.Infrastructure.AssemblyInfo.cs
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Infrastructure\obj\Debug\net8.0\EcommerceVidrieria.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Infrastructure\obj\Debug\net8.0\EcommerceVidrieria.Infrastructure.sourcelink.json
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Infrastructure\obj\Debug\net8.0\EcommerceVidrieria.Infrastructure.csproj.CopyComplete
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Infrastructure\obj\Debug\net8.0\EcommerceVidrieria.Infrastructure.dll
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Infrastructure\obj\Debug\net8.0\refint\EcommerceVidrieria.Infrastructure.dll

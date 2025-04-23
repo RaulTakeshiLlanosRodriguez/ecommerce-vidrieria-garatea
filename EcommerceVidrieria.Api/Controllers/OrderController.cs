@@ -1,4 +1,6 @@
 ﻿using CloudinaryDotNet.Actions;
+using EcommerceVidrieria.Application.Contracts.Identity;
+using EcommerceVidrieria.Application.Features.Orders.Commands.CreateOrder;
 using EcommerceVidrieria.Application.Features.Orders.Commands.UpdateOrder;
 using EcommerceVidrieria.Application.Features.Orders.Queries.GetOrder;
 using EcommerceVidrieria.Application.Features.Orders.Vms;
@@ -17,12 +19,19 @@ namespace EcommerceVidrieria.Api.Controllers
     public class OrderController : ControllerBase
     {
         private IMediator _mediator;
-        private readonly AuthService _authService;
+        private readonly IAuthService _authService;
 
-        public OrderController(IMediator mediator, AuthService authService)
+        public OrderController(IMediator mediator, IAuthService authService)
         {
             _mediator = mediator;
             _authService = authService;
+        }
+
+        [HttpPost(Name = "CreateOrder")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public async Task<ActionResult<OrderVm>> CreateOrder([FromBody] CreateOrderCommand request)
+        {
+            return await _mediator.Send(request);
         }
 
         [HttpGet("user", Name = "PaginationOrderByUsername")]

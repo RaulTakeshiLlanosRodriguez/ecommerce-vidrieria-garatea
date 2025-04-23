@@ -9,6 +9,7 @@ C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Applicat
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Application\obj\Debug\net8.0\EcommerceVidrieria.Application.AssemblyInfoInputs.cache
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Application\obj\Debug\net8.0\EcommerceVidrieria.Application.AssemblyInfo.cs
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Application\obj\Debug\net8.0\EcommerceVidrieria.Application.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Application\obj\Debug\net8.0\EcommerceVidrieria.Application.sourcelink.json
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Application\obj\Debug\net8.0\EcommerceVidrieria.Application.csproj.CopyComplete
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Application\obj\Debug\net8.0\EcommerceVidrieria.Application.dll
 C:\Users\Acer\Documents\proyectos\EcommerceVidrieria\EcommerceVidrieria.Application\obj\Debug\net8.0\refint\EcommerceVidrieria.Application.dll

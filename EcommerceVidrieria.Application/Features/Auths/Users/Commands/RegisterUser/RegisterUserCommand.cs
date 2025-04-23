@@ -14,6 +14,5 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Commands.RegisterU
         public string? Username { get; set; }
         public string? Lastname { get; set; }
         public string? Email { get; set; }
-        public string? Phone { get; set; }
     }
 }

@@ -12,10 +12,16 @@ namespace EcommerceVidrieria.Application.Features.Orders.Vms
     {
         public int Id { get; set; }
         public List<OrderItemVm>? OrderItems { get; set; }
+        public string? DeliveryMethod { get; set; }
+        public string? Dni { get; set; }
+        public string? PhoneNumber { get; set; }
+        public string? Address { get; set; }
+        public string? City { get; set; }
         public decimal Subtotal { get; set; }
-        public decimal Total { get; set; }
+        public decimal TotalOrder { get; set; }
         public decimal PriceDelivery { get; set; }
         public OrderStatus Status { get; set; }
+        public DateTime CreatedDate { get; set; }
         public string StatusLabel
         {
             get

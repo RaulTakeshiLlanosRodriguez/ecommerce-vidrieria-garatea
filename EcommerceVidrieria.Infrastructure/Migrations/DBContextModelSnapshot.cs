@@ -85,16 +85,28 @@ namespace EcommerceVidrieria.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DeliveryMethod")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Dni")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("ShippingPrice")
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("PriceDelivery")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Status")
@@ -103,7 +115,7 @@ namespace EcommerceVidrieria.Infrastructure.Migrations
                     b.Property<decimal>("Subtotal")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("Total")
+                    b.Property<decimal>("TotalOrder")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("UserId")
@@ -270,6 +282,9 @@ namespace EcommerceVidrieria.Infrastructure.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)

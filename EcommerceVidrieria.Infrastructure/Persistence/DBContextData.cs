@@ -33,8 +33,8 @@ namespace EcommerceVidrieria.Infrastructure.Persistence
                     {
                         UserName = "Raul",
                         LastName = "Llanos",
-                        PhoneNumber = "977850597",
-                        Email = "r.llanosrod@gmail.com"
+                        Email = "r.llanosrod@gmail.com",
+                        CreatedDate = DateTime.Now
                     };
                     await userManager.CreateAsync(userAdmin, "PasswordRaulLlanos123$");
                     await userManager.AddToRoleAsync(userAdmin, AppRole.ADMIN);

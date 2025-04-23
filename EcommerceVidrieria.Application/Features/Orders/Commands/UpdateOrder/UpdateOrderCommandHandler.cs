@@ -8,6 +8,7 @@ using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,7 +27,10 @@ namespace EcommerceVidrieria.Application.Features.Orders.Commands.UpdateOrder
 
         public async Task<OrderVm> Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
         {
-            var order = await _unitOfWork.Repository<Order>().GetByIdAsync(request.Orderid);
+            var includes = new List<Expression<Func<Order, object>>>();
+            includes.Add(p => p.OrderItems!);
+            var order = await _unitOfWork.Repository<Order>().GetEntityAsync(x => x.Id == request.Orderid,
+                        includes);
             
             if(request.Status == OrderStatus.Completed)
             {

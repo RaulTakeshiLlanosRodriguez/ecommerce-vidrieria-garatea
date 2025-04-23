@@ -43,7 +43,6 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Commands.UpdateAdm
                 Id = updateUser.Id,
                 UserName = updateUser.UserName,
                 Lastname = updateUser.LastName,
-                Phone = updateUser.PhoneNumber,
                 Email = updateUser.Email,
                 Roles = await _userManager.GetRolesAsync(updateUser)
             };

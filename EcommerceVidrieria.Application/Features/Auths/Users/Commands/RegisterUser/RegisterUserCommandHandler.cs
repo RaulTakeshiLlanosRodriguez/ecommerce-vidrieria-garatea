@@ -37,9 +37,9 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Commands.RegisterU
             var user = new User
             {
                 LastName = request.Lastname,
-                PhoneNumber = request.Phone,
                 Email = request.Email,
-                UserName = request.Username
+                UserName = request.Username,
+                CreatedDate = DateTime.Now
             };
 
             var result = await _userManager.CreateAsync(user!, request.Password!);
@@ -51,9 +51,8 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Commands.RegisterU
                 return new AuthResponse
                 {
                     Id = user.Id,
-                    UserName = user.PhoneNumber,
+                    UserName = user.UserName,
                     Lastname = user.LastName,
-                    Phone = user.PhoneNumber,
                     Email = user.Email,
                     Token = _authService.CreateToken(user, roles),
                     Roles = roles

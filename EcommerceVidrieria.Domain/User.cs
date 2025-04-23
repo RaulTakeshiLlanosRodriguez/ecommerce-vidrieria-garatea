@@ -11,6 +11,7 @@ namespace EcommerceVidrieria.Domain
     {
         public string? LastName { get; set; }
         public bool IsActive { get; set; } = true;
+        public DateTime CreatedDate { get; set; }
         public IReadOnlyList<Order>? Orders { get; set; }
     }
 }
