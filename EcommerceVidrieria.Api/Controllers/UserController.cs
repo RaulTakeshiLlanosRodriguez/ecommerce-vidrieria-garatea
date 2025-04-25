@@ -6,6 +6,7 @@ using EcommerceVidrieria.Application.Features.Auths.Users.Commands.ResetPassword
 using EcommerceVidrieria.Application.Features.Auths.Users.Commands.UpdateAdminStatusUser;
 using EcommerceVidrieria.Application.Features.Auths.Users.Commands.UpdateProfileUser;
 using EcommerceVidrieria.Application.Features.Auths.Users.Queries.GetUserById;
+using EcommerceVidrieria.Application.Features.Auths.Users.Queries.GetUserByIdAdmin;
 using EcommerceVidrieria.Application.Features.Auths.Users.Queries.GetUserByToken;
 using EcommerceVidrieria.Application.Features.Auths.Users.Queries.GetUserList;
 using EcommerceVidrieria.Application.Features.Auths.Users.Vms;
@@ -62,12 +63,19 @@ namespace EcommerceVidrieria.Api.Controllers
             return await _mediator.Send(request);
         }
 
-        [Authorize(Roles = AppRole.ADMIN)]
         [HttpGet("{id}", Name = "GetUserById")]
         [ProducesResponseType(typeof(AuthResponse), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<AuthResponse>> GetUserById(string id)
         {
             var query = new GetUserByIdQuery(id);
+            return await _mediator.Send(query);
+        }
+
+        [HttpGet("admin/{id}", Name = "GetUserByIdAdmin")]
+        [ProducesResponseType(typeof(GetUserByIdAdminVm), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<GetUserByIdAdminVm>> GetUserByIdAdmin(string id)
+        {
+            var query = new GetUserByIdAdminQuery(id);
             return await _mediator.Send(query);
         }
 

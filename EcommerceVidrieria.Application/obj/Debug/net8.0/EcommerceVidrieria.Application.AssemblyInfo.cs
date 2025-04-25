@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EcommerceVidrieria.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+386f15be4681e2259b6ce6cd146f2f809d503174")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+341a02c44699d7ec83c973621dfb68cd0c35d71b")]
 [assembly: System.Reflection.AssemblyProductAttribute("EcommerceVidrieria.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EcommerceVidrieria.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
