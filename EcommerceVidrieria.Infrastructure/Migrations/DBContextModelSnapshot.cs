@@ -47,6 +47,28 @@ namespace EcommerceVidrieria.Infrastructure.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("EcommerceVidrieria.Domain.City", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("NameCity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("City");
+                });
+
             modelBuilder.Entity("EcommerceVidrieria.Domain.Image", b =>
                 {
                     b.Property<int>("Id")
@@ -88,8 +110,8 @@ namespace EcommerceVidrieria.Infrastructure.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("CityId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -123,6 +145,8 @@ namespace EcommerceVidrieria.Infrastructure.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CityId");
 
                     b.HasIndex("UserId");
 
@@ -491,11 +515,18 @@ namespace EcommerceVidrieria.Infrastructure.Migrations
 
             modelBuilder.Entity("EcommerceVidrieria.Domain.Order", b =>
                 {
+                    b.HasOne("EcommerceVidrieria.Domain.City", "City")
+                        .WithMany("Orders")
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
                     b.HasOne("EcommerceVidrieria.Domain.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("City");
 
                     b.Navigation("User");
                 });
@@ -612,6 +643,11 @@ namespace EcommerceVidrieria.Infrastructure.Migrations
             modelBuilder.Entity("EcommerceVidrieria.Domain.Category", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("EcommerceVidrieria.Domain.City", b =>
+                {
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("EcommerceVidrieria.Domain.Order", b =>

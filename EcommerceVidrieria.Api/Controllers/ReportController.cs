@@ -3,9 +3,11 @@ using EcommerceVidrieria.Application.Features.Auths.Users.Vms;
 using EcommerceVidrieria.Application.Features.Orders.Vms;
 using EcommerceVidrieria.Application.Features.Products.Vms;
 using EcommerceVidrieria.Application.Features.Reports.Queries.GetMostSoldProductOfTheMonth;
+using EcommerceVidrieria.Application.Features.Reports.Queries.GetSalesByMonth;
 using EcommerceVidrieria.Application.Features.Reports.Queries.GetSoldProductsOfTheMonth;
 using EcommerceVidrieria.Application.Features.Reports.Queries.GetTopOrdersByDate;
 using EcommerceVidrieria.Application.Features.Reports.Queries.GetTopProductByValorization;
+using EcommerceVidrieria.Application.Features.Reports.Queries.GetTotalOrders;
 using EcommerceVidrieria.Application.Features.Reports.Queries.GetTotalOrdersOnCompletedOrders;
 using EcommerceVidrieria.Application.Features.Reports.Queries.GetTotalSalesByMonth;
 using EcommerceVidrieria.Application.Features.Reports.Queries.GetTotalUserByMonth;
@@ -94,6 +96,23 @@ namespace EcommerceVidrieria.Api.Controllers
         [ProducesResponseType(typeof(ProductVm), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<ProductVm>> GetSoldProductsOfTheMonth([FromQuery] GetSoldProductsOfTheMonthQuery query)
         {
+            return Ok(await _mediator.Send(query));
+        }
+
+        [Authorize(Roles = AppRole.ADMIN)]
+        [HttpGet("salesByMonth", Name = "GetSalesByMonth")]
+        [ProducesResponseType(typeof(List<SalesByMonthVm>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<List<SalesByMonthVm>>> GetSalesByMonth([FromQuery] GetSalesByMonthQuery query)
+        {
+            return Ok(await _mediator.Send(query));
+        }
+
+        [Authorize(Roles = AppRole.ADMIN)]
+        [HttpGet("totalOrders", Name = "GetTotalOrders")]
+        [ProducesResponseType(typeof(TotalOrdersVm), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<TotalOrdersVm>> GetTotalOrders()
+        {
+            var query = new GetTotalOrdersQuery();
             return Ok(await _mediator.Send(query));
         }
     }

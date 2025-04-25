@@ -15,6 +15,7 @@ namespace EcommerceVidrieria.Application.Specifications.Orders
             )
         {
             AddInclude(p => p.OrderItems!);
+            AddInclude(p => p.City!);
         }
     }
 }

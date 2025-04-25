@@ -14,7 +14,7 @@ namespace EcommerceVidrieria.Application.Features.Orders.Commands.CreateOrder
         public string? Dni { get; set; }
         public string? PhoneNumber { get; set; }
         public string? Address { get; set; }
-        public string? City { get; set; }
+        public int? CityId { get; set; }
         public decimal PriceDelivery { get; set; }
         public List<OrderItemVm>? OrderItems { get; set; }
     }

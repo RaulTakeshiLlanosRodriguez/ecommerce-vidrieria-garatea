@@ -41,7 +41,8 @@ namespace EcommerceVidrieria.Application.Features.Orders.Commands.CreateOrder
                 TotalOrder = total,
                 Dni = request.Dni,
                 DeliveryMethod = request.DeliveryMethod,
-                City = request.City,
+                PriceDelivery = request.PriceDelivery,
+                CityId = request.CityId,
                 Address = request.Address,
                 CreatedDate = DateTime.Now
             };

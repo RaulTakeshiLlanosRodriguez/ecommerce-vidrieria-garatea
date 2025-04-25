@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EcommerceVidrieria.Application.Features.Categories.Vms;
+using EcommerceVidrieria.Application.Features.Cities.Vms;
 using EcommerceVidrieria.Application.Features.Images.Vms;
 using EcommerceVidrieria.Application.Features.Orders.Vms;
 using EcommerceVidrieria.Application.Features.Products.Command.CreateProduct;
@@ -23,6 +24,7 @@ namespace EcommerceVidrieria.Application.Mappings
                 .ForMember(p => p.CategoryName, x => x.MapFrom(a => a.Category!.NameCategory));
             CreateMap<Image, ImageVm>();
             CreateMap<Category, CategoryVm>();
+            CreateMap<City, CityVm>();
             CreateMap<CreateProductCommand, Product>();
             CreateMap<CreateProductImageVm, Image>();
             CreateMap<UpdateProductCommand, Product>();
@@ -30,7 +32,8 @@ namespace EcommerceVidrieria.Application.Mappings
                 .ForMember(p => p.ShoppingCartId, x => x.MapFrom(a => a.ShoppingCartMasterId));
             CreateMap<ShoppingCartItem, ShoppingCartItemVm>();
             CreateMap<ShoppingCartItemVm, ShoppingCartItem>();
-            CreateMap<Order, OrderVm>();
+            CreateMap<Order, OrderVm>()
+                .ForMember(o => o.NameCity, x => x.MapFrom(c => c.City!.NameCity));
             CreateMap<OrderItem, OrderItemVm>();
         }
     }

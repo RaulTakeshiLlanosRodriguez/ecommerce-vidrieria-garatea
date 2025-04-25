@@ -46,12 +46,19 @@ namespace EcommerceVidrieria.Infrastructure.Persistence
         .IsRequired() 
         .OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<Order>()
+        builder.Entity<Order>()
         .HasOne(o => o.User)
         .WithMany(u => u.Orders)
         .HasForeignKey(o => o.UserId)
         .IsRequired()
         .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Order>()
+        .HasOne(o => o.City)
+        .WithMany(u => u.Orders)
+        .HasForeignKey(o => o.CityId)
+        .OnDelete(DeleteBehavior.SetNull);
+
 
             builder.Entity<OrderItem>()
                 .HasOne(oi => oi.Order)
