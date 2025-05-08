@@ -1,4 +1,5 @@
-﻿using EcommerceVidrieria.Application.Features.Auths.Users.Vms;
+﻿using EcommerceVidrieria.Application.Exceptions;
+using EcommerceVidrieria.Application.Features.Auths.Users.Vms;
 using EcommerceVidrieria.Application.Persistence;
 using EcommerceVidrieria.Domain;
 using MediatR;
@@ -28,7 +29,7 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Queries.GetUserByI
 
             if (user == null)
             {
-                throw new Exception("El usuario no existe");
+                throw new NotFoundException("El usuario no existe", request.UserId!);
             }
 
             var orders = await _unitOfWork.Repository<Order>().GetAsync(x => x.UserId == user.Id);
@@ -43,10 +44,10 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Queries.GetUserByI
             {
                 Id = user.Id,
                 UserName = user.UserName,
-                Lastname = user.LastName,
+                LastName = user.LastName,
                 Email = user.Email,
                 Roles = await _userManager.GetRolesAsync(user),
-                CreatedDate = user.CreatedDate.ToString("dd/MM/yy"),
+                CreatedDate = user.CreatedDate.ToString("dd/MM/yyyy"),
                 TotalOrders = totalOrder,
                  PendingOrders = pendingOrders,
                  CompletedOrders = completedOrders,

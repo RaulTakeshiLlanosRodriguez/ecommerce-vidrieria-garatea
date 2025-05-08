@@ -33,6 +33,12 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Commands.UpdatePro
                 throw new BadRequestException("El usuario no existe");
             }
 
+            var existsUser = await _userManager.FindByEmailAsync(request.Email!);
+            if (existsUser != null && _authService.GetSessionUser() != updateUser.Id)
+            {
+                throw new BadRequestException("Ya existe un usuario con ese correo electrónico.");
+            }
+
             updateUser.UserName = request.Username;
             updateUser.LastName = request.Lastname;
             updateUser.Email = request.Email;
@@ -51,7 +57,7 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Commands.UpdatePro
             {
                 Id = userById!.Id,
                 UserName = userById.UserName,
-                Lastname = userById.LastName,
+                LastName = userById.LastName,
                 Email = userById.Email,
                 Token = _authService.CreateToken(userById, roles),
                 Roles = roles

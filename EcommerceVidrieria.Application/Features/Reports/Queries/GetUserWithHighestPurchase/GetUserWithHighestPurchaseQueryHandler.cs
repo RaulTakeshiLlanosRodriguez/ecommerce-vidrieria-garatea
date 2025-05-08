@@ -45,7 +45,7 @@ namespace EcommerceVidrieria.Application.Features.Reports.Queries.GetUserWithHig
                 Id = user!.Id,
                 UserName = user.UserName,
                 Email = user.Email,
-                Lastname = user.LastName,
+                LastName = user.LastName,
                 Roles = await _userManager.GetRolesAsync(user)
             };
         }

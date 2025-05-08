@@ -58,7 +58,7 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Commands.LoginUser
             {
                 Id = user.Id,
                 UserName = user.UserName,
-                Lastname = user.LastName,
+                LastName = user.LastName,
                 Email = user.Email,
                 Roles = roles,
                 Token = _authService.CreateToken(user, roles)

@@ -34,7 +34,7 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Queries.GetUserLis
                 {
                     Id = user.Id,
                     UserName = user.UserName,
-                    Lastname = user.LastName,
+                    LastName = user.LastName,
                     Email = user.Email,
                     Roles = await _userManager.GetRolesAsync(user)
                 };

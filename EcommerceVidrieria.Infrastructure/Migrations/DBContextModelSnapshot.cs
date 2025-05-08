@@ -362,9 +362,9 @@ namespace EcommerceVidrieria.Infrastructure.Migrations
                         .HasDatabaseName("EmailIndex");
 
                     b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+                        .HasDatabaseName("UserNameIndex");
+
+                    b.HasIndex("UserName");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });

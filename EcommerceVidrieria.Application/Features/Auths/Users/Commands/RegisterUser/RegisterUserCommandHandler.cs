@@ -52,14 +52,14 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Commands.RegisterU
                 {
                     Id = user.Id,
                     UserName = user.UserName,
-                    Lastname = user.LastName,
+                    LastName = user.LastName,
                     Email = user.Email,
                     Token = _authService.CreateToken(user, roles),
                     Roles = roles
                 };
             }
-
-            throw new Exception("No se pudo registrar el usuario");
+            var errorMessages = result.Errors.Select(e => e.Description).ToList();
+            throw new Exception("Error: "+ string.Join(", ", errorMessages));
         }
     }
 }

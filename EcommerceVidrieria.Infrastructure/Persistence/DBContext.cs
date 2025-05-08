@@ -18,6 +18,15 @@ namespace EcommerceVidrieria.Infrastructure.Persistence
         {
             base.OnModelCreating(builder);
 
+            builder.Entity<User>()
+                .HasIndex(u => u.UserName)
+                .IsUnique(false);
+
+            builder.Entity<User>()
+                .HasIndex(u => u.NormalizedUserName)
+                .IsUnique(false);
+
+
             builder.Entity<Category>()
                 .HasMany(x => x.Products)
                 .WithOne(x => x.Category)
