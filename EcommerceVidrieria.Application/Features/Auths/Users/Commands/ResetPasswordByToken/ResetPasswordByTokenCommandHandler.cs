@@ -32,14 +32,14 @@ namespace EcommerceVidrieria.Application.Features.Auths.Users.Commands.ResetPass
             }
 
             var resultValidatePassword = _userManager.PasswordHasher
-                .VerifyHashedPassword(updateUsuario, updateUsuario.PasswordHash!, request.OldPassword!);
+                .VerifyHashedPassword(updateUsuario, updateUsuario.PasswordHash!, request.CurrentPassword!);
 
             if (!(resultValidatePassword == PasswordVerificationResult.Success))
             {
                 throw new BadRequestException("El actual password ingresado es incorrecto");
             }
 
-            var hashedNewPassoword = _userManager.PasswordHasher.HashPassword(updateUsuario, request.Password!);
+            var hashedNewPassoword = _userManager.PasswordHasher.HashPassword(updateUsuario, request.NewPassword!);
             updateUsuario.PasswordHash = hashedNewPassoword;
 
             var result = await _userManager.UpdateAsync(updateUsuario);

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EcommerceVidrieria.Application.Contracts.Identity;
+using EcommerceVidrieria.Application.Exceptions;
 using EcommerceVidrieria.Application.Features.Orders.Vms;
 using EcommerceVidrieria.Application.Persistence;
 using EcommerceVidrieria.Domain;
@@ -30,8 +31,8 @@ namespace EcommerceVidrieria.Application.Features.Orders.Commands.CreateOrder
 
         public async Task<OrderVm> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
-            var subtotal = Math.Round(request.OrderItems!.Sum(x => x.Price * x.Quantity), 2);
-            var total = subtotal + request.PriceDelivery;
+            var subtotal = 0m;
+            var total = 0m;
             var userId = _authService.GetSessionUser();
 
             var order = new Order
@@ -44,7 +45,8 @@ namespace EcommerceVidrieria.Application.Features.Orders.Commands.CreateOrder
                 PriceDelivery = request.PriceDelivery,
                 CityId = request.CityId,
                 Address = request.Address,
-                CreatedDate = DateTime.Now
+                CreatedDate = DateTime.Now,
+                PhoneNumber = request.PhoneNumber
             };
 
             await _unitOfWork.Repository<Order>().AddAsync(order);
@@ -52,16 +54,24 @@ namespace EcommerceVidrieria.Application.Features.Orders.Commands.CreateOrder
             var items = new List<OrderItem>();
             foreach(var orderItem in request.OrderItems!)
             {
+                var product = await _unitOfWork.Repository<Product>().GetByIdAsync(orderItem.ProductId);
+                if(product == null)
+                {
+                    throw new NotFoundException("Producto no encontrado", orderItem.ProductId);
+                }
                 var item = new OrderItem
                 {
                     ProductId = orderItem.ProductId,
                     Quantity = orderItem.Quantity,
-                    Price = orderItem.Price,
+                    Price = product!.Price,
                     OrderId = order.Id
                 };
+
+                subtotal += orderItem.Quantity * product.Price;
                 items.Add(item);
             }
-
+            order.Subtotal = subtotal;
+            order.TotalOrder = subtotal + request.PriceDelivery;
             _unitOfWork.Repository<OrderItem>().AddRange(items);
             var result = await _unitOfWork.Complete();
 

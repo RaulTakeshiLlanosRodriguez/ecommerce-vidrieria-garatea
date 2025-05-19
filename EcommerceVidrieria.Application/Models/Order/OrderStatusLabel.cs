@@ -9,7 +9,7 @@ namespace EcommerceVidrieria.Application.Models.Order
     public class OrderStatusLabel
     {
         public const string PENDIENTE = nameof(PENDIENTE);
-        public const string ANULADO = nameof(ANULADO);
+        public const string CANCELADO = nameof(CANCELADO);
         public const string COMPLETADO = nameof(COMPLETADO);
     }
 }

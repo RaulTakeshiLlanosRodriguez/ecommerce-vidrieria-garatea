@@ -13,6 +13,7 @@ namespace EcommerceVidrieria.Application.Features.Reports.Vms
         public int TotalCompletedOrders { get; set; }
         public int TotalCancelledOrders { get; set; }
         public List<CityOrdersVm>? OrdersByCity { get; set; }
+        public int TotalPickInOrders { get; set; }
 
     }
 }

@@ -11,7 +11,7 @@ namespace EcommerceVidrieria.Application.Features.Products.Command.CreateProduct
     {
         public CreateProductCommandValidator()
         {
-            RuleFor(p => p.Name)
+            RuleFor(p => p.TitleName)
                 .NotEmpty().WithMessage("El nombre no puede estar en blanco")
                 .MaximumLength(50).WithMessage("El nombre no puede exceder los 50 caracteres");
 

@@ -44,7 +44,6 @@ namespace EcommerceVidrieria.Api.Controllers
             return Ok(pagination);
         }
 
-        [Authorize(Roles = AppRole.ADMIN)]
         [HttpPut(Name = "UpdateOrder")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult<OrderVm>> UpdateOrder([FromBody] UpdateOrderCommand request)

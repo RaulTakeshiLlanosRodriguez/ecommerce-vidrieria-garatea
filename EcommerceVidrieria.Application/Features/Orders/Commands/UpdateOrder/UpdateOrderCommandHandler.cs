@@ -49,7 +49,7 @@ namespace EcommerceVidrieria.Application.Features.Orders.Commands.UpdateOrder
                     }
                     else
                     {
-                        throw new Exception($"No hay suficiente stock para el producto {productToUpdate.Name}.");
+                        throw new Exception($"No hay suficiente stock para el producto {productToUpdate.TitleName}.");
                     }
 
                     productToUpdate.Valorization += 1;

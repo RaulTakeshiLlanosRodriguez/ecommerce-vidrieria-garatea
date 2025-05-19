@@ -8,7 +8,7 @@ namespace EcommerceVidrieria.Domain
 {
     public class Product : BaseDomainModel
     {
-        public string? Name { get; set; }
+        public string? TitleName { get; set; }
         public decimal Price { get; set; }
         public string? Description { get; set; }
         public int Valorization { get; set; } = 0;

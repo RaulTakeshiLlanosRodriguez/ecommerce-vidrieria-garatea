@@ -39,7 +39,7 @@ namespace EcommerceVidrieria.Application.Features.Orders.Vms
                         }
                     case OrderStatus.Cancelled:
                         {
-                            return OrderStatusLabel.ANULADO;
+                            return OrderStatusLabel.CANCELADO;
                         }
                     default: return OrderStatusLabel.PENDIENTE;
                 }
@@ -54,5 +54,6 @@ namespace EcommerceVidrieria.Application.Features.Orders.Vms
             }
             set { }
         }
+        public string? UserId { get; set; }
     }
 }

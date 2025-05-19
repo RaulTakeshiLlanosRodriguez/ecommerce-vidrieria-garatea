@@ -28,6 +28,7 @@ namespace EcommerceVidrieria.Application.Features.Reports.Queries.GetTotalOrders
             var totalCanceledOrders = orders.Count(o => o.Status == OrderStatus.Cancelled);
 
             var ordersWithCity = orders.Where(o => o.CityId.HasValue).ToList();
+            var totalPickInOrders = orders.Count(o => o.CityId == null);
             var cityOrders = ordersWithCity
            .GroupBy(o => o.CityId)
            .Select(group => new CityOrdersVm
@@ -43,7 +44,8 @@ namespace EcommerceVidrieria.Application.Features.Reports.Queries.GetTotalOrders
                 TotalPendingOrders = totalPendingOrders,
                 TotalCompletedOrders = totalCompleteOrders,
                 TotalCancelledOrders = totalCanceledOrders,
-                OrdersByCity = cityOrders
+                OrdersByCity = cityOrders,
+                TotalPickInOrders = totalPickInOrders
             };
 
 
