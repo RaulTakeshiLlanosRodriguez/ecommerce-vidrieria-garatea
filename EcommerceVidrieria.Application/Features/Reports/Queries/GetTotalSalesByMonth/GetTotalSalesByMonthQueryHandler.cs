@@ -26,7 +26,7 @@ namespace EcommerceVidrieria.Application.Features.Reports.Queries.GetTotalSalesB
 
             var totalSales = orders.Sum(o => o.TotalOrder);
             var totalOrders = orders.Count();
-            var maxOrderSale = orders.Max(o =>  o.TotalOrder);
+            var maxOrderSale = orders.Any() ? orders.Max(o => o.TotalOrder) : 0;
             var result = new GetTotalSalesByMonthVm
             {
                 TotalSales = totalSales,
