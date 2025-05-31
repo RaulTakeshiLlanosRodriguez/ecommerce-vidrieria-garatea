@@ -41,6 +41,7 @@ namespace EcommerceVidrieria.Api.Controllers
             return Ok(await _mediator.Send(query));
         }
 
+        [AllowAnonymous]
         [HttpGet("topProducts", Name = "GetTopProductsByValorization")]
         [ProducesResponseType(typeof(ReportVm<List<ProductVm>>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<ReportVm<List<ProductVm>>>> GetTopProductsByValorization()

@@ -41,7 +41,7 @@ namespace EcommerceVidrieria.Application.Features.Reports.Queries.GetMostSoldPro
 
             if(orderItems == null)
             {
-                throw new Exception("No se encontraron productos vendidos este mes.");
+                return new ProductVm();
             }
             var includes = new List<Expression<Func<Product, object>>>();
             includes.Add(p => p.Images!);
@@ -50,7 +50,7 @@ namespace EcommerceVidrieria.Application.Features.Reports.Queries.GetMostSoldPro
 
             if (product == null)
             {
-                throw new Exception("Producto no encontrado.");
+                return new ProductVm();
             }
 
             return _mapper.Map<ProductVm>(product);

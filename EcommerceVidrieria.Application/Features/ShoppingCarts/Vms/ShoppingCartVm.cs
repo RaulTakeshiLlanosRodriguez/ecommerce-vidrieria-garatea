@@ -20,15 +20,5 @@ namespace EcommerceVidrieria.Application.Features.ShoppingCarts.Vms
             }
             set { }
         }
-
-        public decimal Total
-        {
-            get
-            {
-                return Math.Round(
-                        (ShoppingCartItems!.Sum(x => x.Price * x.Quantity)), 2);
-            }
-            set { }
-        }
     }
 }
